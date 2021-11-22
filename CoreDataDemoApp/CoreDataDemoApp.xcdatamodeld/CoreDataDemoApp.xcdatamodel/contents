@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="19H2" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CarEntity" representedClassName="CarEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="carId" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="human" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="HumanEntity" inverseName="cars" inverseEntity="HumanEntity"/>
+    </entity>
+    <entity name="HumanEntity" representedClassName="HumanEntity" parentEntity="UserEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="age" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="cars" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CarEntity" inverseName="human" inverseEntity="CarEntity"/>
+    </entity>
+    <entity name="UserEntity" representedClassName="UserEntity" isAbstract="YES" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="userId" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+    </entity>
+    <elements>
+        <element name="CarEntity" positionX="24.328125" positionY="25.5" width="128" height="88"/>
+        <element name="HumanEntity" positionX="-104.25390625" positionY="-245.0859375" width="128" height="73"/>
+        <element name="UserEntity" positionX="-406.0625" positionY="-86.703125" width="128" height="73"/>
+    </elements>
+</model>
